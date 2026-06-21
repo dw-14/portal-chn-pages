@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简明指南 · hth 知识库</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #fafaf9;
+            color: #1e1e1e;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.7;
+            padding: 3rem 1.25rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page {
+            max-width: 700px;
+            width: 100%;
+        }
+
+        /* 标题层级 */
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 540;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.4rem;
+            color: #111;
+            line-height: 1.25;
+        }
+
+        .subhead {
+            font-size: 1rem;
+            color: #5e5e5e;
+            margin-bottom: 2.75rem;
+            border-left: 3px solid #bbb;
+            padding-left: 1.1rem;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 480;
+            margin: 2.8rem 0 1rem 0;
+            letter-spacing: -0.01em;
+            color: #222;
+            border-bottom: 1px solid #ecece9;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin: 1.6rem 0 0.5rem 0;
+            color: #2b2b2b;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        a {
+            color: #1e3a5f;
+            text-decoration: none;
+            border-bottom: 1px solid #c2d0e0;
+            transition: border-color 0.15s, color 0.15s;
+        }
+
+        a:hover {
+            border-bottom-color: #1e3a5f;
+            color: #0c2a47;
+        }
+
+        /* 卡片 / 区块容器 */
+        .info-card {
+            background: #ffffff;
+            border: 1px solid #e7e6e2;
+            border-radius: 14px;
+            padding: 1.8rem 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+        }
+
+        .info-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .badge-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem 1rem;
+            margin: 1.2rem 0 0.2rem 0;
+            list-style: none;
+        }
+
+        .badge-list li {
+            font-size: 0.9rem;
+            background: #f0efec;
+            padding: 0.2rem 0.9rem;
+            border-radius: 30px;
+            color: #3a3a3a;
+        }
+
+        .notice-box {
+            background: #f7f6f2;
+            border-left: 4px solid #9aa9b9;
+            padding: 1.3rem 1.5rem;
+            border-radius: 0 12px 12px 0;
+            margin: 1.8rem 0;
+        }
+
+        .notice-box p {
+            margin-bottom: 0.25rem;
+            font-size: 0.95rem;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1.2rem 0 0.2rem 0;
+        }
+
+        .related-item {
+            background: #f5f4f0;
+            padding: 0.9rem 1.1rem;
+            border-radius: 12px;
+            border: 1px solid #e4e2dc;
+            font-size: 0.95rem;
+        }
+
+        .related-item .label {
+            font-weight: 480;
+            color: #2c2c2c;
+        }
+
+        .related-item .desc {
+            color: #5f5f5f;
+            font-size: 0.88rem;
+            margin-top: 0.15rem;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e4e2dc;
+            margin: 2.5rem 0 1rem 0;
+        }
+
+        .footer-note {
+            font-size: 0.85rem;
+            color: #7d7b75;
+            margin-top: 1rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 550px) {
+            body {
+                padding: 2rem 1rem;
+            }
+            h1 {
+                font-size: 1.9rem;
+            }
+            .info-card {
+                padding: 1.4rem 1.2rem;
+            }
+            .related-grid {
+                grid-template-columns: 1fr;
+            }
+            .badge-list {
+                gap: 0.4rem 0.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <h1>hth · 简明参考</h1>
+    <div class="subhead">知识整理 / 访问指引 · 2025</div>
+
+    <!-- 介绍 + 核心链接 -->
+    <div class="info-card">
+        <p>
+            本页汇集关于 <a href="https://portal-chn-hth.com">hth</a> 的基本说明与实用提示，
+            帮助快速了解其定位与常见关注点。内容整理自公开信息与通用经验，
+            不做夸大，仅作清晰呈现。
+        </p>
+    </div>
+
+    <!-- 说明区：特点与性质 -->
+    <h2>▍ 服务说明</h2>
+    <p>
+        hth 是一个面向特定用户群体的线上服务入口，主要提供信息聚合与基础交互功能。
+        平台围绕资源集成、信息展示与常用操作路径展开，强调简洁与可用性。
+    </p>
+    <ul class="badge-list">
+        <li>信息聚合</li>
+        <li>操作引导</li>
+        <li>多端适配</li>
+        <li>基础功能集成</li>
+    </ul>
+
+    <!-- 提示区 -->
+    <h2>▍ 访问提醒</h2>
+    <div class="notice-box">
+        <p><strong>• 环境与网络</strong> — 建议使用主流浏览器（Chrome / Edge / Safari）以获得完整布局。</p>
+        <p><strong>• 链接校验</strong> — 直接访问 <a href="https://portal-chn-hth.com">hth</a> 时，请核对地址是否与官方一致，避免仿冒页面。</p>
+        <p><strong>• 信息原则</strong> — 平台内容由运营方维护，第三方描述仅供参考，以实际页面为准。</p>
+        <p><strong>• 账号安全</strong> — 任何情况下均不向他人透露凭证，官方不会索要密码或验证码。</p>
+    </div>
+
+    <!-- 相关信息区：FAQ 摘要 + 常用资料 -->
+    <h2>▍ 相关信息</h2>
+    <div class="related-grid">
+        <div class="related-item">
+            <div class="label">常见问题摘要</div>
+            <div class="desc">账号注册、登录异常、功能权限等基础问题可通过站内帮助中心检索。</div>
+        </div>
+        <div class="related-item">
+            <div class="label">内容与更新</div>
+            <div class="desc">页面布局、模块调整会不定期优化，新版变动以官方公告为准。</div>
+        </div>
+        <div class="related-item">
+            <div class="label">技术兼容</div>
+            <div class="desc">支持主流的桌面与移动浏览器，建议开启 JavaScript 与 Cookie。</div>
+        </div>
+        <div class="related-item">
+            <div class="label">外部参考</div>
+            <div class="desc">本页为独立整理，与 <a href="https://portal-chn-hth.com">hth</a> 无直接隶属关系。</div>
+        </div>
+    </div>
+
+    <!-- 附加说明区块：场景与使用节奏 -->
+    <h2>▍ 适用场景速览</h2>
+    <div class="info-card" style="background: #fcfcf9;">
+        <p>
+            <strong>新用户了解背景</strong> — 通过首页概览快速建立对 <a href="https://portal-chn-hth.com">hth</a> 功能区域的初步印象。<br>
+            <strong>日常信息查阅</strong> — 平台内聚合的条目与分类导航适合规律性浏览。<br>
+            <strong>操作路径参考</strong> — 如需进行设置或查询，可借助菜单分层定位。
+        </p>
+    </div>
+
+    <hr>
+
+    <div class="footer-note">
+        <p>整理时间：2025 · 内容仅作参考，请以实际页面为准。</p>
+        <p style="margin-top:0.3rem;">本页为独立知识条目，与平台运营方无直接关联。</p>
+    </div>
+
+</div>
+</body>
+</html>
