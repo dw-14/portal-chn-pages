@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hth · 站点信息与方向</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f6fafc;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: #1e2f3d;
+            padding: 1.5rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .page {
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+            flex: 1;
+        }
+
+        /* 开头短句 —— 像内页扉页 */
+        .opening {
+            font-size: 1.25rem;
+            letter-spacing: 0.02em;
+            background: #dceff7;
+            padding: 2rem 2rem 1.8rem;
+            border-radius: 32px 32px 16px 16px;
+            color: #0a2a38;
+            margin-bottom: 2.2rem;
+            border-left: 6px solid #3a9bb1;
+            box-shadow: 0 4px 8px rgba(58, 155, 177, 0.08);
+        }
+
+        .opening p {
+            max-width: 780px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .opening strong {
+            color: #0f5b6b;
+            font-weight: 600;
+        }
+
+        /* 承接段落 */
+        .context {
+            background: #ffffff;
+            padding: 2rem 2.2rem;
+            border-radius: 24px;
+            margin-bottom: 2.6rem;
+            box-shadow: 0 6px 14px rgba(0, 30, 40, 0.04);
+            border: 1px solid #dbeaf0;
+        }
+
+        .context p {
+            margin-bottom: 1.2rem;
+        }
+
+        .context p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 网格卡片 —— 特点列表 */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2.8rem;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 1.8rem 1.2rem 1.6rem;
+            border-radius: 28px;
+            border: 1px solid #d4e7ef;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 8px rgba(58, 155, 177, 0.03);
+        }
+
+        .card:hover {
+            border-color: #6bb8ce;
+            box-shadow: 0 6px 18px rgba(58, 155, 177, 0.12);
+            transform: translateY(-2px);
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #125a6b;
+            letter-spacing: 0.01em;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #2c4959;
+        }
+
+        .card .emoji-marker {
+            display: inline-block;
+            background: #dff0f5;
+            color: #11778b;
+            border-radius: 30px;
+            padding: 0.1rem 0.8rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-bottom: 0.6rem;
+        }
+
+        /* 温和结尾 / 提示区 */
+        .gentle-footer {
+            background: #e7f3f8;
+            padding: 2rem 2rem;
+            border-radius: 40px 12px 40px 12px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1.5rem;
+            margin-top: 0.8rem;
+        }
+
+        .gentle-footer p {
+            flex: 2 1 240px;
+            font-size: 1rem;
+            color: #174654;
+        }
+
+        .gentle-footer .link-wrap {
+            flex: 0 0 auto;
+            background: #ffffffd4;
+            padding: 0.5rem 1.4rem;
+            border-radius: 60px;
+            border: 1px solid #c3dce8;
+            backdrop-filter: blur(2px);
+        }
+
+        .gentle-footer a {
+            text-decoration: none;
+            font-weight: 550;
+            font-size: 1.2rem;
+            color: #11647a;
+            transition: color 0.15s;
+        }
+
+        .gentle-footer a:hover {
+            color: #2093ad;
+            text-decoration: underline wavy #3a9bb1 1.5px;
+            text-underline-offset: 6px;
+        }
+
+        .note {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #4c6a78;
+            text-align: right;
+            border-top: 1px dashed #b8d1dc;
+            padding-top: 1.2rem;
+        }
+
+        .note span {
+            background: #d8ebf2;
+            padding: 0.2rem 0.8rem;
+            border-radius: 50px;
+        }
+
+        /* 移动端友好 */
+        @media (max-width: 600px) {
+            body {
+                padding: 0.9rem;
+            }
+            .opening {
+                padding: 1.5rem 1.2rem;
+                font-size: 1.05rem;
+            }
+            .context {
+                padding: 1.5rem 1.2rem;
+            }
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .card {
+                padding: 1.4rem 1rem;
+            }
+            .gentle-footer {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 1.6rem 1.4rem;
+            }
+            .gentle-footer .link-wrap {
+                align-self: flex-start;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .opening {
+                border-left-width: 4px;
+                border-radius: 24px 24px 12px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- 开场短句 -->
+    <div class="opening">
+        <p>
+            <strong>hth</strong> 这个标识指向一个特定站点。<br>
+            它既不是通用词汇，也不是品牌缩写——它就是网址本身的名字。
+        </p>
+    </div>
+
+    <!-- 承接段落：从用户视角说明站点用途 -->
+    <div class="context">
+        <p>
+            当你看到 <strong>hth</strong> 时，很可能在寻找一个带有针对性内容的页面集合。这里不提供泛资讯或门户式入口，而是围绕特定主题整理的信息区域——你可以把它理解成一份经过筛选的说明页，主题明确，层次清楚。
+        </p>
+        <p>
+            站点内容以中文为主，结构偏向实用：从核心概念展开，依次解释背景、用途和常见问题。如果你对某个细节产生好奇，页面里的链接会引导你继续往下看。整个设计有意避免了分散注意力的装饰，目的是让你快速抓住重点。
+        </p>
+        <p>
+            无论你是第一次见到这个名字，还是之前有过片段印象，这个页面都可以当作一个固定的认识起点。所有说明都保持简单、直接，不绕弯子。
+        </p>
+    </div>
+
+    <!-- 特点卡片网格 (代替列表) -->
+    <div class="feature-grid">
+        <div class="card">
+            <span class="emoji-marker">⛊ 聚焦</span>
+            <h3>单一主线</h3>
+            <p>内容围绕 <a href="https://cns-pc-hth.com" style="color:#0f6c81;text-decoration:none;font-weight:500;">hth</a> 展开，不混杂其他无关话题。</p>
+        </div>
+        <div class="card">
+            <span class="emoji-marker">⋮ 层级</span>
+            <h3>分段说明</h3>
+            <p>从概括到细节，每一部分都有独立标题，方便定位和跳读。</p>
+        </div>
+        <div class="card">
+            <span class="emoji-marker">◈ 克制</span>
+            <h3>无多余元素</h3>
+            <p>没有弹窗、广告栏或自动播放内容，页面只呈现文字和必要链接。</p>
+        </div>
+        <div class="card">
+            <span class="emoji-marker">⚙ 适配</span>
+            <h3>移动友好</h3>
+            <p>排版随屏幕宽度调整，卡片、间距、字号在手机上也清楚。</p>
+        </div>
+    </div>
+
+    <!-- 温和结尾 + 链接自然嵌入 -->
+    <div class="gentle-footer">
+        <p>
+            如果你想进一步了解具体内容或查看完整信息，可以直接前往 
+            <span class="link-wrap"><a href="https://cns-pc-hth.com">hth</a></span> 
+            的页面。那里是当前所有说明的原始出处，也是本介绍所参照的主要来源。
+        </p>
+        <p style="flex-basis:100%;font-size:0.9rem;margin-top:0.3rem;color:#2b5c6b;">
+            另外，如果你觉得这段介绍有遗漏，也可以回到那个页面再对比一次——它包含的细节比这篇概要更多。
+        </p>
+    </div>
+
+    <!-- 很轻的脚注，仅体现“整理说明” -->
+    <div class="note">
+        <span>整理 · 说明页</span>
+    </div>
+
+</div>
+</body>
+</html>
